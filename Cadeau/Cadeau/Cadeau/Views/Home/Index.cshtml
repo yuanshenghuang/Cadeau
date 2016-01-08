@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Cadeau.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadeau's</h2>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <p>
+        <label for="amount">Price range:</label>
+        <input type="text" id="amount" name="priceRange" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    </p>
+
+    <div id="slider-range"></div>
+
+    <table class="table">
+        <tr>
+            <th>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Winkel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Merk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prijs)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @Html.HiddenFor(modelItem =>item.ProductId)
+                <td>
+                   <input type="checkbox" value="@item.ProductId" name="id" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Winkel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Merk)
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prijs)
+                </td>          
+            </tr>
+        }
+    
+
+    </table>
+    
+    <div class="form-group">
+        <div class="col-md-offset-0 col-md-10">
+            <input type="submit" value="Go" class="btn btn-default" />
+        </div>
+    </div>
+}
+

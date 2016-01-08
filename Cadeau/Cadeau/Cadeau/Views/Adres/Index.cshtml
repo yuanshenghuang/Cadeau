@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Cadeau.Models.Adres>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.straat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nummer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gemeente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.straat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nummer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gemeente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdresId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AdresId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AdresId })
+        </td>
+    </tr>
+}
+
+</table>

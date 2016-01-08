@@ -1,0 +1,50 @@
+﻿@model Cadeau.Models.Adres
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Adres</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.straat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.straat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nummer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nummer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gemeente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gemeente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdresId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

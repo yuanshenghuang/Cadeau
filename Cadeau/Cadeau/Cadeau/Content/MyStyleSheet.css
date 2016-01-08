@@ -1,0 +1,11 @@
+﻿body {
+}
+
+#errorTextBevesigenPage{
+    color:red;
+}
+
+.ui-slider  {
+    width:30%;
+    margin-bottom:5%;
+}
